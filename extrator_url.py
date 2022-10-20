@@ -45,6 +45,9 @@ class ExtratorURL:
         else:
             return self.get_url_parametros()[indice_valor:indice_e_comercial]
         
+    def __eq__(self, other):
+        return self.url == other.url
+        
 extrator_url = ExtratorURL("bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar")
 valor_quantidade = extrator_url.get_valor_parametro("quantidade")
 print(valor_quantidade)
